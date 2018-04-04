@@ -20,13 +20,14 @@ public class PickableObjectNew : MonoBehaviour {
 
 	void Update ()
     {
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButtonDown(0))
         {
             if(Physics.Raycast(transformCam.position, transformCam.forward, out hit, 3f, rayMask))
             {
                 if(hit.transform.tag == "Pickable")
                 {
                     SetNewTransform(hit.transform);
+
                 }
             }
         }
@@ -69,5 +70,6 @@ public class PickableObjectNew : MonoBehaviour {
         currentTransform.GetComponent<Rigidbody>().isKinematic = false;
         currentTransform = null;
         oB.touched = false;
+        print("Untouched");
     }
 }

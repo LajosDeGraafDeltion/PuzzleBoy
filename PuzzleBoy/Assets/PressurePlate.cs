@@ -5,6 +5,9 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour {
 
     public Animator anim;
+    public GameObject pressurePlate;
+    public GameObject targetDoor;
+    public DoorAnimScr doorAnimation;
 
     void Start ()
     {
@@ -14,7 +17,10 @@ public class PressurePlate : MonoBehaviour {
 
 	void Update ()
     {
-		
+        if (anim.GetBool("Pressed"))
+        {
+            doorAnimation.OpenDoor();
+        }
 	}
 
     public void OnTriggerEnter(Collider other)

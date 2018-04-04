@@ -21,6 +21,7 @@ public class ObjectBounce : MonoBehaviour {
         if(rbBox.isKinematic == true && touched == true)
         {
             poN.RemoveTransform();
+            touched = false;
         }
 	}
 
@@ -29,6 +30,7 @@ public class ObjectBounce : MonoBehaviour {
         if (rbBox.isKinematic == true)
         {
             touched = true;
+            print("Touched");
         }
     }
 
